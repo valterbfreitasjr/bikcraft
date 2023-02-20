@@ -1,9 +1,0 @@
-{
-  "editor.tabSize": 4,
-  "[yaml]": {
-    "editor.tabSize": 4
-  },
-  "[dockercompose]": {
-    "editor.tabSize": 4
-  }
-}
