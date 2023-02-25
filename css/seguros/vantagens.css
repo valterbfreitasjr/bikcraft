@@ -1,0 +1,31 @@
+.vantagens-bg {
+  background: var(--cor-12);
+  --padding: 120px;
+}
+
+.vantagens {
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+}
+
+.vantagens h2 {
+  padding-bottom: 60px;
+}
+
+/* repeat(auto-fit, minmax(280px, max-content)) -> Cria uma responsividade onde ele auto preenche a coluna e quebra caso ele ñ tenha o minímo de 280px.*/
+.vantagens ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+  gap: 40px 80px;
+}
+
+.vantagens h3,
+.vantagens img {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .vantagens-bg {
+    --padding: 60px;
+  }
+}

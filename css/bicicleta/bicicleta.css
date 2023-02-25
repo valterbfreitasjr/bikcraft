@@ -1,0 +1,122 @@
+.bicicleta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Fará com que o seletor mais específico (id) deixe as letras em maiúscula, pois no '.titulo p' (em Componentes) fixamos para lowercase, então mudamos via id. */
+#bicicleta .titulo p {
+  text-transform: uppercase;
+}
+
+/* Definido como flex, porém as imagens iriam vazar, então definido para 'flex-wrap: wrap' para quebrá-las. */
+.bicicleta-imagem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Definido um 'min-width', pois se der para diminuir até 200px, ok, caso contrário ela irá quebrar e crescer novamente para se ajustar no display. */
+.bicicleta-imagem img {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* O primeiro elemento img, terá o tamanho minímo de 100% do espaço disponível do flexbox. */
+.bicicleta-imagem img:first-child {
+  min-width: 100%;
+}
+
+.bicicleta-conteudo > p {
+  margin-bottom: 32px;
+}
+
+.bicicleta-comprar {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  justify-items: start;
+  gap: 8px 12px;
+  margin-bottom: 40px;
+}
+
+.bicicleta-comprar a {
+  grid-row: span 2; /* Irá ocupar 2 linhas */
+}
+
+.bicicleta-comprar span {
+  display: flex;
+  align-items: center;
+  background-color: var(--cor-12);
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.bicicleta-conteudo h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+}
+
+.bicicleta-informacoes,
+.bicicleta-ficha {
+  padding: 32px;
+  background-color: var(--cor-12);
+}
+
+.bicicleta-informacoes {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.bicicleta-informacoes img {
+  width: 24px;
+  padding-bottom: 8px;
+}
+
+.bicicleta-informacoes h3 {
+  margin-bottom: 8px;
+}
+
+.bicicleta-ficha li {
+  display: flex;
+  /* Dentro do 'li' colocamos um 'span' para podermos aplicar essa propriedade de 'space-betwwen'. */
+  justify-content: space-between;
+  padding: 4px 0px;
+  border-bottom: 1px solid var(--cor-11);
+}
+
+/* Irá remover a borda do último item da ficha técnica. */
+.bicicleta-ficha li:last-child {
+  border-bottom: none;
+}
+
+.bicicleta-ficha span {
+  color: var(--cor-6);
+}
+
+@media (max-width: 800px) {
+  .bicicleta {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .bicicleta-imagem {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .bicicleta-informacoes {
+    grid-template-columns: 1fr;
+  }
+  .bicicleta-comprar {
+    grid-template-columns: 1fr;
+  }
+}

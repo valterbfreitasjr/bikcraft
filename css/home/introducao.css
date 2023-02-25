@@ -1,0 +1,55 @@
+.introducao-bg {
+  background: var(--cor-12) url("../../img/dec/bottom-left.svg") no-repeat
+    bottom 140px left 240px;
+  box-shadow: inset 0 -120px var(--cor-0); /* inset = será uma sombra interna, ou seja do 'box' para dentro. 0px */
+}
+
+.introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px;
+}
+
+.introducao-conteudo {
+  align-self: end;
+  padding-bottom: 200px;
+}
+
+.introducao img {
+  width: 100%;
+  height: 100%; /* Ao colocarmos o 'height' em 100% a imagem irá distorcer conforme diminui a tela. */
+  object-fit: cover; /* Utilizaremos para a imagem 'croppar' conforme a tela diminui. */
+  border-radius: 4px;
+}
+
+.introducao h1 {
+  margin-bottom: 32px;
+}
+
+.introducao p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  .introducao-bg {
+    background: var(--cor-11);
+    padding: 20px;
+    box-shadow: inset 0 -60px var(--cor-0);
+  }
+  .introducao {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .introducao-conteudo {
+    padding-bottom: 0px; /* Removendo o 'padding-bootom' que estava em 200 no conteúdo, pois ñ precisamos mais. */
+    margin-left: -20px;
+  }
+  .introducao h1 {
+    margin-bottom: 16px;
+  }
+  .introducao img {
+    height: 300px;
+    width: 100%;
+    margin-left: -20px;
+  }
+}

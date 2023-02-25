@@ -1,0 +1,60 @@
+.perguntas {
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  --padding: 120px;
+}
+
+.perguntas h2 {
+  margin-bottom: var(--padding) / 2;
+}
+
+.perguntas dl > div {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.perguntas dl > div:nth-child(odd) {
+  background-color: var(--cor-1);
+}
+
+/* Poderíamos colocar o after/before com positions relative/absolute, porém foi demonstrado de uma outra maneira, também válida. */
+.perguntas dt {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.perguntas dt::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--cor-p1);
+}
+
+.perguntas dt::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 6px;
+  background-image: url("../../img/icones/seta-abrir.svg");
+  transition: 0.2s;
+}
+
+.perguntas dt:hover::after {
+  transform: rotate(180deg);
+}
+
+.perguntas dd {
+  padding-left: 20px;
+  padding-top: 8px;
+  max-width: 70ch;
+}
+
+@media (max-width: 800px) {
+  .perguntas {
+    --padding: 60px;
+  }
+}

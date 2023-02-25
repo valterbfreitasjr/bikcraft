@@ -1,0 +1,18 @@
+.termos {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.termos h2 {
+  font-weight: 600;
+}
+
+/* Irá adicionar a propriedade ao h2 que vier 'após' o 'p'. */
+.termos p + h2 {
+  margin-top: 40px;
+}
+
+.termos p {
+  margin-bottom: 24px;
+  max-width: 75ch;
+}
